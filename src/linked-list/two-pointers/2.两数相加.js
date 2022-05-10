@@ -20,12 +20,12 @@
 
 // O(n) / O(1)
 function addTwoNumbers(l1, l2) {
-    const dummy = new ListNode('dummy');
-
+    const dummyHead = new ListNode('dummy');
+    let tail = dummyHead;
     let p1 = l1;
     let p2 = l2;
-    let current = dummy;
     let carry = 0;
+
     while (p1 !== null || p2 !== null) {
         let sum = 0;
 
@@ -41,17 +41,17 @@ function addTwoNumbers(l1, l2) {
 
         sum += carry;
 
-        current.next = new ListNode(sum % 10);
+        tail.next = new ListNode(sum % 10);
         carry = Math.floor(sum / 10);
 
-        current = current.next;
+        tail = tail.next;
     }
 
     if (carry !== 0) {
-        current.next = new ListNode(carry);
+        tail.next = new ListNode(carry);
     }
 
-    return dummy.next;
+    return dummyHead.next;
 }
 
 // @lc code=end

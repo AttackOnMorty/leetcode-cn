@@ -44,13 +44,13 @@ function isPalindrome(head) {
 
 function reverseList(head) {
     let newHead = null;
-    let current = head;
+    let p = head;
 
-    while (current !== null) {
-        const next = current.next;
-        current.next = newHead;
-        newHead = current;
-        current = next;
+    while (p !== null) {
+        const next = p.next;
+        p.next = newHead;
+        newHead = p;
+        p = next;
     }
 
     return newHead;

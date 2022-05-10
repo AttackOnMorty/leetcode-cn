@@ -21,13 +21,13 @@
 // O(n) / O(1)
 function removeElements(head, val) {
     const dummyHead = new ListNode('dummy', head);
+    let p = dummyHead;
 
-    let current = dummyHead;
-    while (current.next !== null) {
-        if (current.next.val === val) {
-            current.next = current.next.next;
+    while (p.next !== null) {
+        if (p.next.val === val) {
+            p.next = p.next.next;
         } else {
-            current = current.next;
+            p = p.next;
         }
     }
 
