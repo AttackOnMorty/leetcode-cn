@@ -12,16 +12,16 @@
 
 // O(n) / O(1)
 function reverseString(s) {
-    let left = 0;
-    let right = s.length - 1;
+    let i = 0;
+    let j = s.length - 1;
 
-    while (left < right) {
-        const temp = s[left];
-        s[left] = s[right];
-        s[right] = temp;
+    while (i < j) {
+        const temp = s[i];
+        s[i] = s[j];
+        s[j] = temp;
 
-        left++;
-        right--;
+        i++;
+        j--;
     }
 }
 
