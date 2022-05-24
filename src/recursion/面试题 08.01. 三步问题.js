@@ -37,7 +37,8 @@ function helper(n, cache) {
     if (cache.has(n)) return cache.get(n);
 
     const result =
-        (helper(n - 1, cache) + helper(n - 2, cache) + helper(n - 3, cache)) %
+        (((helper(n - 1, cache) + helper(n - 2, cache)) % (1e9 + 7)) +
+            helper(n - 3, cache)) %
         (1e9 + 7);
     cache.set(n, result);
 

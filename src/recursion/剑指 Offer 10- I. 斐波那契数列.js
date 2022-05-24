@@ -48,8 +48,8 @@ function helper(n, cache) {
 
     if (cache.has(n)) return cache.get(n);
 
-    const res = (helper(n - 1, cache) + helper(n - 2, cache)) % (1e9 + 7);
-    cache.set(n, res);
+    const result = (helper(n - 1, cache) + helper(n - 2, cache)) % (1e9 + 7);
+    cache.set(n, result);
 
     return cache.get(n);
 }
