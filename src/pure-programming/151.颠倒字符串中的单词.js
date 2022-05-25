@@ -15,8 +15,6 @@ function reverseWords(s) {
     const arr = trim([...s]);
     const n = arr.length;
 
-    if (n === 0) return '';
-
     reverse(arr, 0, n - 1);
 
     let i = 0;
@@ -39,7 +37,7 @@ function trim(arr) {
     const n = arr.length;
 
     let start = 0;
-    while (start < n && arr[start] === ' ') {
+    while (arr[start] === ' ') {
         start++;
     }
 
@@ -58,14 +56,14 @@ function trim(arr) {
 }
 
 // O(n) / O(1)
-function reverse(arr, start, end) {
-    while (start < end) {
-        const temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
+function reverse(arr, i, j) {
+    while (i < j) {
+        const temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
 
-        start++;
-        end--;
+        i++;
+        j--;
     }
 }
 
