@@ -15,10 +15,10 @@ function defangIPaddr(address) {
     let result = '';
 
     for (const char of address) {
-        if (char !== '.') {
-            result += char;
-        } else {
+        if (char === '.') {
             result += '[.]';
+        } else {
+            result += char;
         }
     }
 

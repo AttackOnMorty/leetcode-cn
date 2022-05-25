@@ -23,7 +23,11 @@ function replaceSpace(s) {
     let result = '';
 
     for (const char of s) {
-        result += char === ' ' ? '%20' : char;
+        if (char === ' ') {
+            result += '%20';
+        } else {
+            result += char;
+        }
     }
 
     return result;
