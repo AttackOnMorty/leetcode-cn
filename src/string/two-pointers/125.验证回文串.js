@@ -12,25 +12,25 @@
 
 // O(n) / O(1)
 function isPalindrome(s) {
-    let left = 0;
-    let right = s.length - 1;
+    let i = 0;
+    let j = s.length - 1;
 
-    while (left < right) {
-        if (!isAlpha(s[left])) {
-            left++;
+    while (i < j) {
+        if (!isAlpha(s[i])) {
+            i++;
             continue;
         }
 
-        if (!isAlpha(s[right])) {
-            right--;
+        if (!isAlpha(s[j])) {
+            j--;
             continue;
         }
 
-        if (toLower(s[left]) !== toLower(s[right])) {
+        if (toLower(s[i]) !== toLower(s[j])) {
             return false;
         } else {
-            left++;
-            right--;
+            i++;
+            j--;
         }
     }
 
@@ -39,19 +39,11 @@ function isPalindrome(s) {
 
 // O(1) / O(1)
 function isAlpha(char) {
-    if (char >= 'a' && char <= 'z') {
-        return true;
-    }
-
-    if (char >= 'A' && char <= 'Z') {
-        return true;
-    }
-
-    if (char >= '0' && char <= '9') {
-        return true;
-    }
-
-    return false;
+    return (
+        (char >= 'a' && char <= 'z') ||
+        (char >= 'A' && char <= 'Z') ||
+        (char >= '0' && char <= '9')
+    );
 }
 
 // O(1) / O(1)
