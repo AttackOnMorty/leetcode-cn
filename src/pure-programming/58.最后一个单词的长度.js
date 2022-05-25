@@ -12,18 +12,18 @@
 
 // O(n) / O(1)
 function lengthOfLastWord(s) {
-    let i = s.length - 1;
-    while (s[i] === ' ' && i >= 0) {
-        i--;
+    let end = s.length - 1;
+    while (s[end] === ' ') {
+        end--;
     }
 
-    if (i === -1) return 0;
-
     let count = 0;
-    let j = i;
-    while (s[j] !== ' ' && j >= 0) {
-        count++;
-        j--;
+    for (let i = end; i >= 0; i--) {
+        if (s[i] !== ' ') {
+            count++;
+        } else {
+            break;
+        }
     }
 
     return count;
