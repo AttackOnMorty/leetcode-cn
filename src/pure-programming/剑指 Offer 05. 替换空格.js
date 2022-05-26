@@ -20,15 +20,15 @@
 
 // O(n) / O(n)
 function replaceSpace(s) {
-    let result = '';
+    let res = '';
 
     for (const char of s) {
         if (char === ' ') {
-            result += '%20';
+            res += '%20';
         } else {
-            result += char;
+            res += char;
         }
     }
 
-    return result;
+    return res;
 }

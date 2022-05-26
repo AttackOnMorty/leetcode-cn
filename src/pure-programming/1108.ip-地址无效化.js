@@ -12,17 +12,17 @@
 
 // O(n) / O(n)
 function defangIPaddr(address) {
-    let result = '';
+    let res = '';
 
     for (const char of address) {
         if (char === '.') {
-            result += '[.]';
+            res += '[.]';
         } else {
-            result += char;
+            res += char;
         }
     }
 
-    return result;
+    return res;
 }
 
 // @lc code=end
