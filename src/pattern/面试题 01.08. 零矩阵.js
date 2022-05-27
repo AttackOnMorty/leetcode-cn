@@ -1,5 +1,5 @@
 /*
-面试题 01.08.零矩阵
+面试题 01.08. 零矩阵
 
 编写一种算法，若M × N矩阵中某个元素为0，则将其所在的行与列清零。
 
@@ -31,7 +31,7 @@
   [0,3,1,0]
 ]
 
-链接：https://leetcode-cn.com/problems/zero-matrix-lcci
+链接：https://leetcode.cn/problems/zero-matrix-lcci
 */
 
 /**
@@ -44,20 +44,20 @@ function setZeroes(matrix) {
     const m = matrix.length;
     const n = matrix[0].length;
     const zeroRows = [];
-    const zeroColumns = [];
+    const zeroCols = [];
 
     for (let i = 0; i < m; i++) {
         for (let j = 0; j < n; j++) {
             if (matrix[i][j] === 0) {
                 zeroRows[i] = true;
-                zeroColumns[j] = true;
+                zeroCols[j] = true;
             }
         }
     }
 
     for (let i = 0; i < m; i++) {
         for (let j = 0; j < n; j++) {
-            if (zeroRows[i] || zeroColumns[j]) {
+            if (zeroRows[i] || zeroCols[j]) {
                 matrix[i][j] = 0;
             }
         }
