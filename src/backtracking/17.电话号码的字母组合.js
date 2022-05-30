@@ -38,7 +38,7 @@ function letterCombinations(digits) {
         for (const char of keyBoard[digits[i] - 1]) {
             path.push(char);
             backtrack(keyBoard, i + 1, path);
-            path.pop(char);
+            path.pop();
         }
     }
 }
