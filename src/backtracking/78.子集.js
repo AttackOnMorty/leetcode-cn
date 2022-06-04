@@ -10,19 +10,17 @@
  * @return {number[][]}
  */
 
-// O(n!) / O(n)
+// O(2^n) / O(n)
 function subsets(nums) {
-    const result = [];
+    const res = [];
     backtrack(nums, 0, []);
-    return result;
+    return res;
 
     function backtrack(nums, start, path) {
-        result.push([...path]);
+        res.push([...path]);
 
         for (let i = start; i < nums.length; i++) {
-            const num = nums[i];
-            if (path.includes(num)) continue;
-            path.push(num);
+            path.push(nums[i]);
             backtrack(nums, i + 1, path);
             path.pop();
         }
