@@ -13,6 +13,7 @@
 // O(2^n) / O(n)
 function subsetsWithDup(nums) {
     const res = [];
+    nums.sort((a, b) => a - b);
     backtrack(nums, 0, []);
     return res;
 
