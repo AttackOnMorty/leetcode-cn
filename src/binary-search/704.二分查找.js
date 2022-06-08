@@ -17,8 +17,9 @@ function search(nums, target) {
     let right = nums.length - 1;
 
     while (left <= right) {
-        const mid = Math.floor((left + right) / 2);
+        const mid = left + Math.floor((right - left) >> 1);
         const num = nums[mid];
+
         if (num === target) {
             return mid;
         } else if (num < target) {
