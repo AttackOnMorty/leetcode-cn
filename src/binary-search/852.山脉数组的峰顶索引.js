@@ -17,11 +17,9 @@ function peakIndexInMountainArray(arr) {
 
     while (left <= right) {
         const mid = left + ((right - left) >> 1);
-        const num = arr[mid];
-
-        if (num < arr[mid + 1]) {
+        if (arr[mid] < arr[mid + 1]) {
             left = mid + 1;
-        } else if (num > arr[mid + 1]) {
+        } else if (arr[mid] > arr[mid + 1]) {
             right = mid - 1;
         }
     }
