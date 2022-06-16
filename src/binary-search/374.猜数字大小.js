@@ -25,7 +25,7 @@ function guessNumber(n) {
     let right = n;
 
     while (left <= right) {
-        const num = left + Math.floor((right - left) >> 1);
+        const num = left + ((right - left) >> 1);
         const res = guess(num);
 
         if (res === 0) {
