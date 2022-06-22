@@ -32,7 +32,7 @@
  * @return {number[]}
  */
 
-// O(n) / O(nlogn)
+// O(n) / O(n): The space complexity is equal to the number of nodes in the last level, which is O(n/2)
 function levelOrder(root) {
     if (root === null) return [];
 
