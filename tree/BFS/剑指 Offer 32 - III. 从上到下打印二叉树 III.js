@@ -42,7 +42,7 @@ function levelOrder(root) {
 
     const res = [];
     const queue = [];
-    let order = 1;
+    let isOrderRight = true;
 
     queue.push(root);
 
@@ -51,7 +51,7 @@ function levelOrder(root) {
         const n = queue.length;
         for (let i = 0; i < n; i++) {
             const node = queue.shift();
-            if (order === 1) {
+            if (isOrderRight) {
                 children.push(node.val);
             } else {
                 children.unshift(node.val);
@@ -60,7 +60,7 @@ function levelOrder(root) {
             if (node.right !== null) queue.push(node.right);
         }
         res.push(children);
-        order = -order;
+        isOrderRight = !isOrderRight;
     }
 
     return res;
